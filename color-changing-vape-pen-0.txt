@@ -1,0 +1,71 @@
+[name] 3 microcontrollers
+[puzzle] Sz010
+[production-cost] 1100
+[power-usage] 693
+[lines-of-code] 17
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+....154...............
+........1554.1C.......
+........1C94..34......
+.........A355554......
+.........354.154......
+......................
+......................
+......................
+......................
+
+[chip] 
+[type] UC4
+[x] 11
+[y] 3
+[code] 
+  slx x0
+  mov x0 p1
+  
+  
+
+[chip] 
+[type] LEDRGBV
+[x] 15
+[y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 6
+[code] 
+  mov x0 dat
+  teq -999 dat
+- mov dat x3
+- mov x0 x3
+- mov x0 x2
+- mov x0 acc
+  tgt acc 0
+- mov 0 x3
+- mov 0 x3
+- mov 0 x2
+  sub 1
+  slp 1
+
+[chip] 
+[type] UC4
+[x] 11
+[y] 6
+[code] 
+  slx x0
+  mov x0 p1
+  mov x0 p0
+
+[chip] 
+[type] RADIO
+[x] 2
+[y] 7
+[is-puzzle-provided] true
+

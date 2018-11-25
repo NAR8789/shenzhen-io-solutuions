@@ -1,0 +1,58 @@
+[name] ewwww memory buzzer
+[puzzle] Sz035
+[production-cost] 700
+[power-usage] 184
+[lines-of-code] 6
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+......................
+......................
+........14.15554......
+...........154........
+...........154........
+......................
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 3
+[code] 
+  teq 1 x0
+- mov 1 x3
+BZ:
+  mov x2 p1
+SLP:slp 1
++ teq -999 x0
++ jmp BZ
+
+[chip] 
+[type] BANK
+[x] 13
+[y] 3
+[rom] 
+100,0,100,0,100,0,100,0,100,0,100,0,100,0
+
+[chip] 
+[type] RADIO
+[x] 6
+[y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] NOTE
+[x] 17
+[y] 7
+[code] 
+xxxxxxxx still has
+a 1-instruction
+more efficient
+pulse generator
+

@@ -1,0 +1,110 @@
+[name] xwake sensor
+[puzzle] Sz005
+[production-cost] 2300
+[power-usage] 257
+[lines-of-code] 36
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.......1555555555C....
+....15C1554......A....
+....94A..15C14.1CA....
+....2161554A14..AA....
+.........14A....A2....
+.........14A154.34....
+.....155554354........
+......................
+......................
+
+[chip] 
+[type] RTC
+[x] 3
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 2
+[code] 
+@ mov x1 acc
+@ sub p0
+@ mov acc x3
+@ mov x0 x3
+@ mov x1 x3
+@ mov 0 x2
+
+[chip] 
+[type] UC6
+[x] 14
+[y] 2
+[code] 
+@ mov x1 acc
+@ tlt acc 0
++ add 96
+@ mov acc x3
+@ mov x1 acc
+@ sub x1
+@ tlt acc 0
++ add 96
+@ mov acc x3
+@ mul -1
+@ add 96
+@ mov acc x3
+@ tcp 0 0
+
+[chip] 
+[type] DX3
+[x] 6
+[y] 3
+
+[chip] 
+[type] DIAL1
+[x] 8
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL2
+[x] 8
+[y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 5
+[code] 
+@ mov x1 null
+@ slp x2
+  mov 0 x0
+  mov 100 p0
+  slp x2
+  mov 0 p0
+  slp x2
+  mov 1 x3
+
+[chip] 
+[type] RAM
+[x] 13
+[y] 5
+
+[chip] 
+[type] UC6
+[x] 5
+[y] 6
+[code] 
+@ teq 0 1
+- slx x3
+- mov x3 null
+  tlt p0 20
+- mov 100 p1
++ mov 0 p1
+  tgt x1 0
++ slp 1
+- mov  0 p1
+

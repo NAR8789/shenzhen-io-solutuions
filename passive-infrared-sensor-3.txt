@@ -1,0 +1,142 @@
+[name] ridiculous initialization
+[puzzle] Sz005
+[production-cost] 2400
+[power-usage] 227
+[lines-of-code] 49
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.......1555555541C....
+....94.....15554.A....
+....A...94.14.1C.A....
+....21556..14..A.A....
+.....15C1414.14A.2....
+.....14A1414954354....
+.......355556.........
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 14
+[y] 2
+[code] 
+@ mov x0 acc
+@ tlt acc 0
++ add 96
+@ mov acc x3
+@ mov x0 acc
+@ sub x0
+@ tlt acc 0
++ add 96
+@ mov acc x3
+@ mul -1
+@ add 96
+@ mov acc x3
+@ tcp 0 0
+
+[chip] 
+[type] RTC
+[x] 3
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 3
+[code] 
+@ tgt x3 x2
++ mov 1 acc
+- mov -1 acc
+@ tgt p0 x2
+- mul -1
+@ tgt x3 p0
+- mul -1
+@ mov acc x1
+@ mov p0 x1
+@ mov acc x0
+@ tcp 0 0
+
+[chip] 
+[type] DIAL1
+[x] 9
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4X
+[x] 11
+[y] 3
+[code] 
+@ tcp x2 0
++ mov x0 acc
+- mov x1 acc
+@ sub x2
+@ mov acc x3
++ mov x1 x3
+@ mov x0 x3
+- mov x1 x3
+@ tcp 0 0
+
+[chip] 
+[type] DIAL2
+[x] 9
+[y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 5
+[code] 
+@ mov x1 acc
+@ add 1
+@ mul 50
+@ mov acc p1
+@ slp x2
+  not
+  mov acc p1
+  slp x2
+  not
+  mov acc p1
+  slp x2
+  mov 1 x3
+
+[chip] 
+[type] RAM
+[x] 12
+[y] 5
+
+[chip] 
+[type] NOTE
+[x] 1
+[y] 6
+[code] 
+3 optimizations 
+discovered here
+- tcp sleep all
+- move ord combine
+  middle
+- invariant of
+  sensor on off
+
+[chip] 
+[type] UC4
+[x] 5
+[y] 7
+[code] 
+  tlt p0 20
+- mov 100 p1
++ mov 0 p1
+  slp 1
+
+[chip] 
+[type] AND
+[x] 15
+[y] 7
+

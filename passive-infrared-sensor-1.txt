@@ -1,0 +1,62 @@
+[name] dx300
+[puzzle] Sz005
+[production-cost] 600
+[power-usage] 362
+[lines-of-code] 11
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+...........1C.........
+.......154.16.........
+....8..154............
+....355554.1541554....
+......................
+......................
+......................
+......................
+
+[chip] 
+[type] DX3
+[x] 13
+[y] 3
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 4
+[code] 
+  teq x0 p1
++ mov 100 acc
+  teq x1 p1
++ mov 0 acc
+  tlt acc 50
++ mov 0 x2
++ jmp SLP
+  tlt p0 20
+- mov 111 x2
++ mov 0 x2
+SLP:slp 1
+
+[chip] 
+[type] DIAL2
+[x] 6
+[y] 5
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL1
+[x] 6
+[y] 6
+[is-puzzle-provided] true
+
+[chip] 
+[type] RTC
+[x] 9
+[y] 7
+[is-puzzle-provided] true
+
