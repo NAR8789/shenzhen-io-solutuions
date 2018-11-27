@@ -1,0 +1,74 @@
+[name] 2x uc
+[puzzle] Sz007EZ
+[production-cost] 1000
+[power-usage] 88
+[lines-of-code] 20
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+...............155C...
+.......9555555554174..
+.......A.......8.154..
+..154.16......16.154..
+......154.154.155554..
+..........1554.95554..
+............1556......
+......................
+......................
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 2
+
+[chip] 
+[type] UC4
+[x] 8
+[y] 3
+[code] 
+  slx x0
+  teq x0 3
+  mov 10 x1
++ slp 2
+- slp 1
+  mov 100 x1
+  slp 1
+  mov 0 x1
+  gen p1 3 0
+
+[chip] 
+[type] DX3
+[x] 13
+[y] 3
+
+[chip] 
+[type] UC6
+[x] 4
+[y] 4
+[code] 
+  slx x1
+  mov x1 acc
+  teq acc 2
+  mov 100 x3
+  slp 1
+  mov 10 x3
+  slp 1
+- mov 1 x3
+- slp 1
+  mov 0 x3
+  mov acc x2
+
+[chip] 
+[type] DX3
+[x] 16
+[y] 5
+
+[chip] 
+[type] BRIDGE
+[x] 15
+[y] 6
+

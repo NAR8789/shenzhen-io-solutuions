@@ -1,0 +1,79 @@
+[name] sandwich description language
+[puzzle] Sz007EZ
+[production-cost] 1400
+[power-usage] 231
+[lines-of-code] 25
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.......954.....155C...
+...9554A...955554174..
+...34..34..A.154.154..
+..154.154.16.15C.154..
+.......94.1541C35554..
+.......3555555755554..
+......................
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 4
+[y] 4
+[code] 
+  slx x1
+  mov x1 acc
+  mov 100 x0 # brd
+  mov 10 x0  # mt
+  teq acc 2
+- mov 1 x0   # chs
+  teq acc 3
++ mov 110 x0 # mst
+  mov 110 x0
+  mov 200 x0 # brd
+  mov 101 x0 # flg
+  mov 0 x3
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 4
+[code] 
+  slx x1
+  mov x1 null
+LOOP: mov x0 acc
+  tgt acc 100
++ mov 0 x3
++ sub 100
+- mov acc x3
++ mov acc x2
+  tgt p0 50
+- slp 1
+- jmp LOOP
++ slp 3
++ mov 0 x2
+
+[chip] 
+[type] DX3
+[x] 12
+[y] 4
+
+[chip] 
+[type] DX3
+[x] 16
+[y] 5
+
+[chip] 
+[type] BRIDGE
+[x] 15
+[y] 6
+
+[chip] 
+[type] RAM
+[x] 6
+[y] 7
+

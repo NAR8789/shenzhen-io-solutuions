@@ -1,0 +1,80 @@
+[name] 3x uc4
+[puzzle] Sz007EZ
+[production-cost] 1100
+[power-usage] 105
+[lines-of-code] 25
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+...............155C...
+..........1555554174..
+......154....154.154..
+..154.154....15C.154..
+.......94.154..35554..
+.......3555555555554..
+......................
+......................
+......................
+
+[chip] 
+[type] UC4
+[x] 8
+[y] 4
+[code] 
+  slx x0
+  teq x0 3
+  mov 10 x1
++ slp 2
+- slp 1
+  mov 100 x1
+  slp 1
+  mov 0 x1
+  gen p0 3 0
+
+[chip] 
+[type] DX3
+[x] 12
+[y] 4
+
+[chip] 
+[type] UC4X
+[x] 4
+[y] 5
+[code] 
+  slx x1
+  mov x1 acc
+  mov acc x3
+  teq acc 2
++ slp 2
+- slp 3
+  mov acc x2
+
+[chip] 
+[type] DX3
+[x] 16
+[y] 5
+
+[chip] 
+[type] UC4X
+[x] 8
+[y] 6
+[code] 
+  slx x1
+  teq x1 2
+  mov 100 x3
+  slp 1
+  mov 10 x3
+  slp 1
+- mov 1 x3
+- slp 1
+  mov 0 x3
+
+[chip] 
+[type] BRIDGE
+[x] 15
+[y] 6
+
